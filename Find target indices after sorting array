@@ -1,0 +1,25 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var targetIndices = function (nums, target) {
+    let arr = [];
+    let sortedArray = nums.sort(function (a, b) { return a - b })
+    //  let result = sortedArray.slice(0, target);
+    if (nums.indexOf(target) == -1) {
+        return arr;
+    }
+    var holdIndex = [];
+    var index;
+    for (var i = 0, j = sortedArray.length; i < j; i++) {
+        if (sortedArray[i] === target) {
+            index = sortedArray.indexOf(sortedArray[i], i);
+            holdIndex.push(index);
+        };
+    };
+    return holdIndex;
+
+
+    //return result;
+};
