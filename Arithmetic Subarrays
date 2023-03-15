@@ -1,0 +1,33 @@
+/**
+ * @param {number[]} nums
+ * @param {number[]} l
+ * @param {number[]} r
+ * @return {boolean[]}
+ */
+var checkArithmeticSubarrays = function (nums, l, r) {
+    let temp1;
+    let temp2;
+    let x = [];
+    let result = []
+    let arr = [];
+    for (let i = 0; i < l.length; i++) {
+        temp1 = l[i];
+        temp2 = r[i];
+        x.push(check(nums.slice(l[i], r[i] + 1)))
+       
+    }
+    return x;
+}
+function check(arr) {
+    arr.sort((a,b) => b-a)
+	let dif = arr[0]-arr[1]
+
+	for(let i=1; i<arr.length-1; i++){
+		if((arr[i] - arr[i+1]) !== dif){
+			return false
+		}
+	}
+	return true
+}
+
+
