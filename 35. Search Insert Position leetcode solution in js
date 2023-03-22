@@ -1,0 +1,21 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var searchInsert = function (nums, target) {
+    let result = [...nums]
+    if (nums.indexOf(target) == -1) {
+        result.push(target);
+        result.sort((a, b) => a - b)
+        return result.indexOf(target);
+
+    }
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] == target) {
+            return i;
+        }
+    }
+    return 0;
+
+};
