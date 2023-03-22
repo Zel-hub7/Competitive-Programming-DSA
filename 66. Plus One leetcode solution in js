@@ -1,0 +1,9 @@
+/**
+ * @param {number[]} arr
+ * @return {number[]}
+ */
+var plusOne = function (arr) {
+    let newNum = (BigInt(arr.join("")) + BigInt(1)).toString()
+    let result = newNum.split("")
+    return result;
+};
