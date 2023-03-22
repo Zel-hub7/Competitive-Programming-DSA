@@ -1,0 +1,17 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var singleNumber = function (nums) {
+    let arrB = []
+    nums.sort((a, b) => a - b)
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = i + 1; j < nums.length; j++) {
+            if (nums[i] == nums[j]) {
+                arrB.push(nums[j], nums[i])
+            }
+        }
+    }
+    let difference = nums.filter(x => !arrB.includes(x))
+    return difference;
+};
