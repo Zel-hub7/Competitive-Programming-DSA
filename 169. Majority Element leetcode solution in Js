@@ -1,0 +1,20 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var majorityElement = function (nums) {
+    let result = [];
+
+    for (let i = 0; i < nums.length; i++) {
+        var counted = nums.reduce((count, value) =>
+            (value == nums[i] ? count + 1 : count), 0)
+        if (counted > (nums.length) / 2) {
+            result.push(nums[i])
+        }
+
+    }
+
+    return Math.max(...result)
+
+
+};
