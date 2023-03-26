@@ -1,0 +1,14 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxSubArray = function (nums) {
+    var sum1 = 0;
+    var final_sum = -Infinity;
+    for (let i = 0; i < nums.length; i++) {
+        sum1 = Math.max(nums[i], sum1 + nums[i])
+        final_sum = Math.max(sum1, final_sum);
+    }
+    return final_sum;
+
+};
