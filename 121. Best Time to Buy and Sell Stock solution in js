@@ -1,0 +1,20 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxProfit = function (nums) {
+    var left, right = 0;
+    var maxProfit = 0;
+
+    while (right < nums.length) {
+        if (nums[left] < nums[right]) {
+            var profit = (nums[right] - nums[left])
+            maxProfit = Math.max(profit, maxProfit)
+        } else {
+            left = right;
+        }
+        right++
+    }
+    return maxProfit
+
+};
