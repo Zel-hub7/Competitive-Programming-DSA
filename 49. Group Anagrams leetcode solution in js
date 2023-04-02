@@ -1,0 +1,18 @@
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+var groupAnagrams = function (strs) {
+    let result = {}
+    for (let word of strs) {
+        var temp = word.split("").sort().join("")
+        if (result[temp]) {
+            result[temp].push(word);
+        } else {
+            result[temp] = [word];
+        }
+    }
+    return Object.values(result);
+
+
+};
