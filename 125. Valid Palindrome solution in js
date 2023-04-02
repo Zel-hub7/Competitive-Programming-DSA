@@ -1,0 +1,11 @@
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function (s) {
+    const replaced = s.replace(/[^a-z0-9]/gi, '');
+    let result = replaced.toLowerCase();
+    let str = result.split("").reverse().join("")
+    return str == result
+
+}
